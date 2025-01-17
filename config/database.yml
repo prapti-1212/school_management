@@ -1,0 +1,12 @@
+default: &default
+  adapter: mysql2          # Use the mysql2 adapter for MySQL
+  encoding: utf8mb4        # Recommended encoding for MySQL, supports most characters
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>  # Connection pool size
+  timeout: 5000            # Timeout for database connections
+
+development:
+  <<: *default
+  database: school_management  # Name of the development database
+  username: root            # Your MySQL username (typically 'root' for local development)
+  password: Prapti         # Password for your MySQL user
+  host: localhost          # Database server address (use 'localhost' for local development)
